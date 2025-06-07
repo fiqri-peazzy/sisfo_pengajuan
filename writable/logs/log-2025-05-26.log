@@ -1,0 +1,461 @@
+ERROR - 2025-05-26 12:26:35 --> File dokumen pendukung tidak valid: 
+ERROR - 2025-05-26 15:12:36 --> mysqli_sql_exception: Unknown column 's.tanggal_pengajuan' in 'field list' in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `p`.`id`...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`id`...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`id`...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`id`...', Array, false)
+#4 C:\xampp\htdocs\sisfo_pengajuan\app\Controllers\MainController.php(1030): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(933): App\Controllers\MainController->apiHasilPemeriksaan()
+#6 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+#7 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\sisfo_pengajuan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-05-26 15:12:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 's.tanggal_pengajuan' in 'field list'
+[Method: GET, Route: hasil-pemeriksaan]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`id` as `pemeriksaan_id`, `p`.`sertifikat_id`, `p`.`jenis_file`, `p`.`status_pemeriksaan`, `p`.`tanggal_pemeriksaan`, `p`.`catatan_umum`, `s`.`project_id`, `s`.`file_sertifikat`, `s`.`file_kuantitas`, `s`.`file_kualitas`, `s`.`bulan`, `s`.`tahun`, `s`.`tanggal_pengajuan`, `s`.`status` as `status_sertifikat`, `pr`.`name` as `project_name`, `u`.`name` as `nama_pemeriksa`
+FROM `pemeriksaan` `p`
+LEFT JOIN `sertifikat` `s` ON `s`.`id` = `p`.`sertifikat_id`
+LEFT JOIN `projects` `pr` ON `pr`.`id` = `s`.`project_id`
+LEFT JOIN `users` `u` ON `u`.`id` = `p`.`pemeriksa_id`', [], false)
+ 2 APPPATH\Controllers\MainController.php(1030): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->apiHasilPemeriksaan()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-26 15:12:36 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 's.tanggal_pengajuan' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`id` as `pemeriksaan_id`, `p`.`sertifikat_id`, `p`.`jenis_file`, `p`.`status_pemeriksaan`, `p`.`tanggal_pemeriksaan`, `p`.`catatan_umum`, `s`.`project_id`, `s`.`file_sertifikat`, `s`.`file_kuantitas`, `s`.`file_kualitas`, `s`.`bulan`, `s`.`tahun`, `s`.`tanggal_pengajuan`, `s`.`status` as `status_sertifikat`, `pr`.`name` as `project_name`, `u`.`name` as `nama_pemeriksa`
+FROM `pemeriksaan` `p`
+LEFT JOIN `sertifikat` `s` ON `s`.`id` = `p`.`sertifikat_id`
+LEFT JOIN `projects` `pr` ON `pr`.`id` = `s`.`project_id`
+LEFT JOIN `users` `u` ON `u`.`id` = `p`.`pemeriksa_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`id` as `pemeriksaan_id`, `p`.`sertifikat_id`, `p`.`jenis_file`, `p`.`status_pemeriksaan`, `p`.`tanggal_pemeriksaan`, `p`.`catatan_umum`, `s`.`project_id`, `s`.`file_sertifikat`, `s`.`file_kuantitas`, `s`.`file_kualitas`, `s`.`bulan`, `s`.`tahun`, `s`.`tanggal_pengajuan`, `s`.`status` as `status_sertifikat`, `pr`.`name` as `project_name`, `u`.`name` as `nama_pemeriksa`
+FROM `pemeriksaan` `p`
+LEFT JOIN `sertifikat` `s` ON `s`.`id` = `p`.`sertifikat_id`
+LEFT JOIN `projects` `pr` ON `pr`.`id` = `s`.`project_id`
+LEFT JOIN `users` `u` ON `u`.`id` = `p`.`pemeriksa_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`id` as `pemeriksaan_id`, `p`.`sertifikat_id`, `p`.`jenis_file`, `p`.`status_pemeriksaan`, `p`.`tanggal_pemeriksaan`, `p`.`catatan_umum`, `s`.`project_id`, `s`.`file_sertifikat`, `s`.`file_kuantitas`, `s`.`file_kualitas`, `s`.`bulan`, `s`.`tahun`, `s`.`tanggal_pengajuan`, `s`.`status` as `status_sertifikat`, `pr`.`name` as `project_name`, `u`.`name` as `nama_pemeriksa`
+FROM `pemeriksaan` `p`
+LEFT JOIN `sertifikat` `s` ON `s`.`id` = `p`.`sertifikat_id`
+LEFT JOIN `projects` `pr` ON `pr`.`id` = `s`.`project_id`
+LEFT JOIN `users` `u` ON `u`.`id` = `p`.`pemeriksa_id`', [], false)
+ 4 APPPATH\Controllers\MainController.php(1030): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->apiHasilPemeriksaan()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-26 15:12:36 --> [Caused by] mysqli_sql_exception: Unknown column 's.tanggal_pengajuan' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `p`.`id` as `pemeriksaan_id`, `p`.`sertifikat_id`, `p`.`jenis_file`, `p`.`status_pemeriksaan`, `p`.`tanggal_pemeriksaan`, `p`.`catatan_umum`, `s`.`project_id`, `s`.`file_sertifikat`, `s`.`file_kuantitas`, `s`.`file_kualitas`, `s`.`bulan`, `s`.`tahun`, `s`.`tanggal_pengajuan`, `s`.`status` as `status_sertifikat`, `pr`.`name` as `project_name`, `u`.`name` as `nama_pemeriksa`
+FROM `pemeriksaan` `p`
+LEFT JOIN `sertifikat` `s` ON `s`.`id` = `p`.`sertifikat_id`
+LEFT JOIN `projects` `pr` ON `pr`.`id` = `s`.`project_id`
+LEFT JOIN `users` `u` ON `u`.`id` = `p`.`pemeriksa_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`id` as `pemeriksaan_id`, `p`.`sertifikat_id`, `p`.`jenis_file`, `p`.`status_pemeriksaan`, `p`.`tanggal_pemeriksaan`, `p`.`catatan_umum`, `s`.`project_id`, `s`.`file_sertifikat`, `s`.`file_kuantitas`, `s`.`file_kualitas`, `s`.`bulan`, `s`.`tahun`, `s`.`tanggal_pengajuan`, `s`.`status` as `status_sertifikat`, `pr`.`name` as `project_name`, `u`.`name` as `nama_pemeriksa`
+FROM `pemeriksaan` `p`
+LEFT JOIN `sertifikat` `s` ON `s`.`id` = `p`.`sertifikat_id`
+LEFT JOIN `projects` `pr` ON `pr`.`id` = `s`.`project_id`
+LEFT JOIN `users` `u` ON `u`.`id` = `p`.`pemeriksa_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`id` as `pemeriksaan_id`, `p`.`sertifikat_id`, `p`.`jenis_file`, `p`.`status_pemeriksaan`, `p`.`tanggal_pemeriksaan`, `p`.`catatan_umum`, `s`.`project_id`, `s`.`file_sertifikat`, `s`.`file_kuantitas`, `s`.`file_kualitas`, `s`.`bulan`, `s`.`tahun`, `s`.`tanggal_pengajuan`, `s`.`status` as `status_sertifikat`, `pr`.`name` as `project_name`, `u`.`name` as `nama_pemeriksa`
+FROM `pemeriksaan` `p`
+LEFT JOIN `sertifikat` `s` ON `s`.`id` = `p`.`sertifikat_id`
+LEFT JOIN `projects` `pr` ON `pr`.`id` = `s`.`project_id`
+LEFT JOIN `users` `u` ON `u`.`id` = `p`.`pemeriksa_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`id` as `pemeriksaan_id`, `p`.`sertifikat_id`, `p`.`jenis_file`, `p`.`status_pemeriksaan`, `p`.`tanggal_pemeriksaan`, `p`.`catatan_umum`, `s`.`project_id`, `s`.`file_sertifikat`, `s`.`file_kuantitas`, `s`.`file_kualitas`, `s`.`bulan`, `s`.`tahun`, `s`.`tanggal_pengajuan`, `s`.`status` as `status_sertifikat`, `pr`.`name` as `project_name`, `u`.`name` as `nama_pemeriksa`
+FROM `pemeriksaan` `p`
+LEFT JOIN `sertifikat` `s` ON `s`.`id` = `p`.`sertifikat_id`
+LEFT JOIN `projects` `pr` ON `pr`.`id` = `s`.`project_id`
+LEFT JOIN `users` `u` ON `u`.`id` = `p`.`pemeriksa_id`', [], false)
+ 5 APPPATH\Controllers\MainController.php(1030): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->apiHasilPemeriksaan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+ERROR - 2025-05-26 16:15:14 --> mysqli_sql_exception: Unknown column 'sertifikat_id' in 'where clause' in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sisfo_pengajuan\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\sisfo_pengajuan\app\Controllers\MainController.php(792): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\sisfo_pengajuan\app\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(21, Array)
+#8 C:\xampp\htdocs\sisfo_pengajuan\app\ThirdParty\ssp.php(284): SSP::data_output(Array, Array, NULL)
+#9 C:\xampp\htdocs\sisfo_pengajuan\app\Controllers\MainController.php(823): SSP::simple(Array, Array, 'sertifikat', 'id', Array)
+#10 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+#12 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#14 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\xampp\htdocs\sisfo_pengajuan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\xampp\htdocs\sisfo_pengajuan\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#17 {main}
+CRITICAL - 2025-05-26 16:15:14 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sertifikat_id' in 'where clause'
+[Method: GET, Route: tableRiwayatSertifikat]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = :sertifikat_id:
+AND `jenis_file` = :jenis_file:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\MainController.php(792): CodeIgniter\BaseModel->first()
+ 5 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(21, [...])
+ 6 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+ 7 APPPATH\Controllers\MainController.php(823): SSP::simple([...], [...], 'sertifikat', 'id', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-26 16:15:14 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sertifikat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = 21
+AND `jenis_file` = \'file_kuantitas\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = 21
+AND `jenis_file` = \'file_kuantitas\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = :sertifikat_id:
+AND `jenis_file` = :jenis_file:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\MainController.php(792): CodeIgniter\BaseModel->first()
+ 7 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(21, [...])
+ 8 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+ 9 APPPATH\Controllers\MainController.php(823): SSP::simple([...], [...], 'sertifikat', 'id', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-26 16:15:14 --> [Caused by] mysqli_sql_exception: Unknown column 'sertifikat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = 21
+AND `jenis_file` = \'file_kuantitas\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = 21
+AND `jenis_file` = \'file_kuantitas\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = 21
+AND `jenis_file` = \'file_kuantitas\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = :sertifikat_id:
+AND `jenis_file` = :jenis_file:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\MainController.php(792): CodeIgniter\BaseModel->first()
+ 8 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(21, [...])
+ 9 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+10 APPPATH\Controllers\MainController.php(823): SSP::simple([...], [...], 'sertifikat', 'id', [...])
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+12 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+13 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+ERROR - 2025-05-26 16:19:30 --> mysqli_sql_exception: Unknown column 'sertifikat_id' in 'where clause' in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sisfo_pengajuan\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\sisfo_pengajuan\app\Controllers\MainController.php(790): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\sisfo_pengajuan\app\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(21, Array)
+#8 C:\xampp\htdocs\sisfo_pengajuan\app\ThirdParty\ssp.php(284): SSP::data_output(Array, Array, NULL)
+#9 C:\xampp\htdocs\sisfo_pengajuan\app\Controllers\MainController.php(820): SSP::simple(Array, Array, 'sertifikat', 'id', Array)
+#10 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+#12 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#14 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\xampp\htdocs\sisfo_pengajuan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\xampp\htdocs\sisfo_pengajuan\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#17 {main}
+CRITICAL - 2025-05-26 16:19:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sertifikat_id' in 'where clause'
+[Method: GET, Route: tableRiwayatSertifikat]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = :sertifikat_id:
+AND `file_name` = :file_name:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\MainController.php(790): CodeIgniter\BaseModel->first()
+ 5 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(21, [...])
+ 6 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+ 7 APPPATH\Controllers\MainController.php(820): SSP::simple([...], [...], 'sertifikat', 'id', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-26 16:19:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sertifikat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = 21
+AND `file_name` = \'file_kuantitas\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = 21
+AND `file_name` = \'file_kuantitas\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = :sertifikat_id:
+AND `file_name` = :file_name:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\MainController.php(790): CodeIgniter\BaseModel->first()
+ 7 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(21, [...])
+ 8 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+ 9 APPPATH\Controllers\MainController.php(820): SSP::simple([...], [...], 'sertifikat', 'id', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-26 16:19:30 --> [Caused by] mysqli_sql_exception: Unknown column 'sertifikat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = 21
+AND `file_name` = \'file_kuantitas\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = 21
+AND `file_name` = \'file_kuantitas\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = 21
+AND `file_name` = \'file_kuantitas\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = :sertifikat_id:
+AND `file_name` = :file_name:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\MainController.php(790): CodeIgniter\BaseModel->first()
+ 8 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(21, [...])
+ 9 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+10 APPPATH\Controllers\MainController.php(820): SSP::simple([...], [...], 'sertifikat', 'id', [...])
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+12 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+13 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-26 16:19:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:19:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-26 16:19:54 --> mysqli_sql_exception: Unknown column 'sertifikat_id' in 'where clause' in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sisfo_pengajuan\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\sisfo_pengajuan\app\Controllers\MainController.php(790): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\sisfo_pengajuan\app\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(21, Array)
+#8 C:\xampp\htdocs\sisfo_pengajuan\app\ThirdParty\ssp.php(284): SSP::data_output(Array, Array, NULL)
+#9 C:\xampp\htdocs\sisfo_pengajuan\app\Controllers\MainController.php(820): SSP::simple(Array, Array, 'sertifikat', 'id', Array)
+#10 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+#12 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#14 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 C:\xampp\htdocs\sisfo_pengajuan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 C:\xampp\htdocs\sisfo_pengajuan\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#17 {main}
+CRITICAL - 2025-05-26 16:19:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sertifikat_id' in 'where clause'
+[Method: GET, Route: tableRiwayatSertifikat]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = :sertifikat_id:
+AND `file_name` = :file_name:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\MainController.php(790): CodeIgniter\BaseModel->first()
+ 5 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(21, [...])
+ 6 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+ 7 APPPATH\Controllers\MainController.php(820): SSP::simple([...], [...], 'sertifikat', 'id', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-26 16:19:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sertifikat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = 21
+AND `file_name` = \'file_kuantitas\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = 21
+AND `file_name` = \'file_kuantitas\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = :sertifikat_id:
+AND `file_name` = :file_name:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\MainController.php(790): CodeIgniter\BaseModel->first()
+ 7 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(21, [...])
+ 8 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+ 9 APPPATH\Controllers\MainController.php(820): SSP::simple([...], [...], 'sertifikat', 'id', [...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-26 16:19:54 --> [Caused by] mysqli_sql_exception: Unknown column 'sertifikat_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = 21
+AND `file_name` = \'file_kuantitas\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = 21
+AND `file_name` = \'file_kuantitas\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = 21
+AND `file_name` = \'file_kuantitas\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `catatan_revisi`
+WHERE `sertifikat_id` = :sertifikat_id:
+AND `file_name` = :file_name:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\MainController.php(790): CodeIgniter\BaseModel->first()
+ 8 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(21, [...])
+ 9 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+10 APPPATH\Controllers\MainController.php(820): SSP::simple([...], [...], 'sertifikat', 'id', [...])
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+12 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+13 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-26 16:20:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:20:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-26 16:20:38 --> ErrorException: Undefined array key "catatan_revisi"
+[Method: GET, Route: tableRiwayatSertifikat]
+in APPPATH\Controllers\MainController.php on line 792.
+ 1 APPPATH\Controllers\MainController.php(792): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "catatan_revisi"', 'C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Controllers\\MainController.php', 792)
+ 2 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(21, [...])
+ 3 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+ 4 APPPATH\Controllers\MainController.php(820): SSP::simple([...], [...], 'sertifikat', 'id', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-26 16:21:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:21:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:21:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:21:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:21:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:21:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:22:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:22:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:22:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:22:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:22:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:22:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:22:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-26 16:22:26 --> ErrorException: Undefined variable $projects
+[Method: GET, Route: pengajuan]
+in APPPATH\Controllers\MainController.php on line 345.
+ 1 APPPATH\Controllers\MainController.php(345): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $projects', 'C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Controllers\\MainController.php', 345)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePengajuan()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-26 16:22:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:22:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:22:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:22:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:23:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:23:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:23:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:23:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:32:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:32:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:33:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:33:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:34:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-26 16:34:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

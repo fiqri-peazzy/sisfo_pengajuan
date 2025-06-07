@@ -1,0 +1,270 @@
+DEBUG - 2025-05-23 07:19:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:19:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:20:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:20:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:20:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:20:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:22:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:25:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:26:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-23 07:26:12 --> Error: Call to a member function isValid() on array
+[Method: POST, Route: submit_sertifikat]
+in APPPATH\Controllers\MainController.php on line 507.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->submitSertifikat()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-23 07:27:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-23 07:27:01 --> Error: Call to a member function isValid() on array
+[Method: POST, Route: submit_sertifikat]
+in APPPATH\Controllers\MainController.php on line 507.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->submitSertifikat()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-23 07:27:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-23 07:27:49 --> Error: Call to a member function isValid() on array
+[Method: POST, Route: submit_sertifikat]
+in APPPATH\Controllers\MainController.php on line 507.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->submitSertifikat()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-23 07:30:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:30:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:30:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:33:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:35:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:35:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:37:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:38:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:41:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:41:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:46:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:46:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:48:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:48:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:48:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:50:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:50:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:50:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-23 07:50:28 --> File dokumen pendukung tidak valid atau sudah dipindahkan: buku-panduan-penulisan-penelitian-akademik-2019.pdf
+ERROR - 2025-05-23 07:50:28 --> Item bukan instance UploadedFile.
+DEBUG - 2025-05-23 07:57:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 07:57:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-23 07:57:28 --> Item bukan instance UploadedFile: CodeIgniter\HTTP\Files\UploadedFile Object
+(
+    [size:protected] => 5506
+    [originalMimeType:protected] => application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+    [path:protected] => C:\xampp\tmp\phpDE04.tmp
+    [clientPath:protected] => Data_Kunjungan_Pentadio_Resort_2025.xlsx
+    [originalName:protected] => Data_Kunjungan_Pentadio_Resort_2025.xlsx
+    [name:protected] => Data_Kunjungan_Pentadio_Resort_2025.xlsx
+    [error:protected] => 0
+    [hasMoved:protected] => 
+    [pathName:SplFileInfo:private] => C:\xampp\tmp\phpDE04.tmp
+    [fileName:SplFileInfo:private] => phpDE04.tmp
+)
+
+ERROR - 2025-05-23 07:57:28 --> Item bukan instance UploadedFile: CodeIgniter\HTTP\Files\UploadedFile Object
+(
+    [size:protected] => 135356
+    [originalMimeType:protected] => application/vnd.openxmlformats-officedocument.wordprocessingml.document
+    [path:protected] => C:\xampp\tmp\phpDE15.tmp
+    [clientPath:protected] => db_buku_induk (4).docx
+    [originalName:protected] => db_buku_induk (4).docx
+    [name:protected] => db_buku_induk (4).docx
+    [error:protected] => 0
+    [hasMoved:protected] => 
+    [pathName:SplFileInfo:private] => C:\xampp\tmp\phpDE15.tmp
+    [fileName:SplFileInfo:private] => phpDE15.tmp
+)
+
+DEBUG - 2025-05-23 08:08:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 08:08:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 08:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 08:11:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 08:11:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 08:14:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 08:14:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 08:17:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 08:17:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 08:17:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 08:18:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 09:22:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 09:23:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 09:33:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 09:35:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 09:36:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 09:36:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 09:36:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 09:37:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 09:37:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 09:39:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-23 09:58:24 --> ErrorException: Undefined array key "tahun"
+[Method: GET, Route: tableRiwayatSertifikat]
+in APPPATH\Controllers\MainController.php on line 590.
+ 1 APPPATH\Controllers\MainController.php(590): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tahun"', 'C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Controllers\\MainController.php', 590)
+ 2 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(5, [...])
+ 3 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+ 4 APPPATH\Controllers\MainController.php(654): SSP::simple([...], [...], 'sertifikat', 'id', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-23 10:01:50 --> ErrorException: Undefined array key "tahun"
+[Method: GET, Route: tableRiwayatSertifikat]
+in APPPATH\Controllers\MainController.php on line 589.
+ 1 APPPATH\Controllers\MainController.php(589): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tahun"', 'C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Controllers\\MainController.php', 589)
+ 2 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(5, [...])
+ 3 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+ 4 APPPATH\Controllers\MainController.php(670): SSP::simple([...], [...], 'sertifikat', 'id', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-23 10:03:09 --> ErrorException: Undefined array key "tahun"
+[Method: GET, Route: tableRiwayatSertifikat]
+in APPPATH\Controllers\MainController.php on line 589.
+ 1 APPPATH\Controllers\MainController.php(589): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tahun"', 'C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Controllers\\MainController.php', 589)
+ 2 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(5, [...])
+ 3 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+ 4 APPPATH\Controllers\MainController.php(669): SSP::simple([...], [...], 'sertifikat', 'id', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-23 10:03:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 10:03:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-23 10:03:40 --> ErrorException: Undefined array key "tahun"
+[Method: GET, Route: tableRiwayatSertifikat]
+in APPPATH\Controllers\MainController.php on line 589.
+ 1 APPPATH\Controllers\MainController.php(589): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tahun"', 'C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Controllers\\MainController.php', 589)
+ 2 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(5, [...])
+ 3 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+ 4 APPPATH\Controllers\MainController.php(669): SSP::simple([...], [...], 'sertifikat', 'id', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-23 10:05:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 10:05:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 10:05:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 10:05:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 10:06:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 10:06:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 10:06:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 10:06:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 10:07:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 10:07:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 10:08:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 10:08:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 10:08:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 10:08:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-23 14:39:14 --> ErrorException: Attempt to read property "name" on array
+[Method: GET, Route: tableRiwayatSertifikat]
+in APPPATH\Controllers\MainController.php on line 627.
+ 1 APPPATH\Controllers\MainController.php(627): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "name" on array', 'C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Controllers\\MainController.php', 627)
+ 2 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(1, [...])
+ 3 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+ 4 APPPATH\Controllers\MainController.php(723): SSP::simple([...], [...], 'sertifikat', 'id', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-23 14:39:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 14:39:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-23 14:39:29 --> ErrorException: Attempt to read property "name" on array
+[Method: GET, Route: tableRiwayatSertifikat]
+in APPPATH\Controllers\MainController.php on line 627.
+ 1 APPPATH\Controllers\MainController.php(627): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "name" on array', 'C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Controllers\\MainController.php', 627)
+ 2 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(1, [...])
+ 3 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+ 4 APPPATH\Controllers\MainController.php(723): SSP::simple([...], [...], 'sertifikat', 'id', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-23 14:39:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 14:39:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-23 14:39:39 --> ErrorException: Attempt to read property "name" on array
+[Method: GET, Route: tableRiwayatSertifikat]
+in APPPATH\Controllers\MainController.php on line 627.
+ 1 APPPATH\Controllers\MainController.php(627): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "name" on array', 'C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Controllers\\MainController.php', 627)
+ 2 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(1, [...])
+ 3 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+ 4 APPPATH\Controllers\MainController.php(723): SSP::simple([...], [...], 'sertifikat', 'id', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-23 14:40:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 14:40:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-23 14:40:08 --> ErrorException: Undefined property: stdClass::$file_sertifilitas
+[Method: GET, Route: tableRiwayatSertifikat]
+in APPPATH\Controllers\MainController.php on line 666.
+ 1 APPPATH\Controllers\MainController.php(666): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$file_sertifilitas', 'C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Controllers\\MainController.php', 666)
+ 2 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(18, [...])
+ 3 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+ 4 APPPATH\Controllers\MainController.php(723): SSP::simple([...], [...], 'sertifikat', 'id', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-23 14:40:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 14:40:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-23 14:40:32 --> TypeError: CodeIgniter\HTTP\SiteURI::stringifyRelativePath(): Return value must be of type string, null returned
+[Method: GET, Route: tableRiwayatSertifikat]
+in SYSTEMPATH\HTTP\SiteURI.php on line 420.
+ 1 SYSTEMPATH\HTTP\SiteURI.php(394): CodeIgniter\HTTP\SiteURI->stringifyRelativePath(null)
+ 2 SYSTEMPATH\Helpers\url_helper.php(59): CodeIgniter\HTTP\SiteURI->baseUrl(null, null)
+ 3 APPPATH\Controllers\MainController.php(665): base_url(null)
+ 4 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(18, [...])
+ 5 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+ 6 APPPATH\Controllers\MainController.php(723): SSP::simple([...], [...], 'sertifikat', 'id', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableRiwayatSertifikat()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-23 14:44:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 14:44:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-23 14:45:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-23 15:28:08 --> File dokumen pendukung tidak valid: 

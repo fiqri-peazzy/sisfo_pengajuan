@@ -1,0 +1,28 @@
+CRITICAL - 2025-06-04 21:40:05 --> ErrorException: Attempt to read property "name" on array
+[Method: GET, Route: tableLaporan]
+in APPPATH\Controllers\MainController.php on line 1047.
+ 1 APPPATH\Controllers\MainController.php(1047): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "name" on array', 'C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Controllers\\MainController.php', 1047)
+ 2 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(3, [...])
+ 3 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+ 4 APPPATH\Controllers\MainController.php(1096): SSP::simple([...], [...], 'projects', 'id', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableLaporan()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-06-04 21:50:16 --> ErrorException: Attempt to read property "start_date" on array
+[Method: GET, Route: tableLaporan]
+in APPPATH\Controllers\MainController.php on line 1056.
+ 1 APPPATH\Controllers\MainController.php(1056): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "start_date" on array', 'C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Controllers\\MainController.php', 1056)
+ 2 APPPATH\ThirdParty\ssp.php(50): App\Controllers\MainController->App\Controllers\{closure}(6, [...])
+ 3 APPPATH\ThirdParty\ssp.php(284): SSP::data_output([...], [...], null)
+ 4 APPPATH\Controllers\MainController.php(1098): SSP::simple([...], [...], 'projects', 'id', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->tableLaporan()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')

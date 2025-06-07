@@ -1,0 +1,1228 @@
+ERROR - 2025-05-24 11:45:52 --> mysqli_sql_exception: Table 'sisfo_pengajuan.revisions' doesn't exist in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `s`.`id`...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `s`.`id`...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `s`.`id`...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `s`.`id`...', Array, false)
+#4 C:\xampp\htdocs\sisfo_pengajuan\app\Controllers\MainController.php(792): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+#6 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+#7 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\sisfo_pengajuan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-05-24 11:45:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'sisfo_pengajuan.revisions' doesn't exist
+[Method: GET, Route: pemeriksaan]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `s`.`id` as `sertifikat_id`, `s`.`bulan`, `s`.`tahun`, `s`.`status` as `status_sertifikat`, `s`.`created_at` as `tanggal_sertifikat`, `p`.`name` as `nama_proyek`, `u`.`name` as `nama_kontraktor`, `d`.`nama_file`, `d`.`tipe_dokumen`, `d`.`uploaded_at`, `r`.`field_name`, `r`.`old_value`, `r`.`new_value`, `r`.`change_type`, `r`.`created_at` as `revision_date`
+FROM `sertifikat` `s`
+JOIN `projects` `p` ON `p`.`id` = `s`.`project_id`
+JOIN `users` `u` ON `u`.`id` = `s`.`kontraktor_id` AND `u`.`role` = \'kontraktor\'
+LEFT JOIN `dokumen_pendukung` `d` ON `d`.`sertifikat_id` = `s`.`id`
+LEFT JOIN `revisions` `r` ON `r`.`sertifikat_id` = `s`.`id`
+WHERE `u`.`role` = :u.role:', [...], false)
+ 2 APPPATH\Controllers\MainController.php(792): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 11:45:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'sisfo_pengajuan.revisions' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `s`.`id` as `sertifikat_id`, `s`.`bulan`, `s`.`tahun`, `s`.`status` as `status_sertifikat`, `s`.`created_at` as `tanggal_sertifikat`, `p`.`name` as `nama_proyek`, `u`.`name` as `nama_kontraktor`, `d`.`nama_file`, `d`.`tipe_dokumen`, `d`.`uploaded_at`, `r`.`field_name`, `r`.`old_value`, `r`.`new_value`, `r`.`change_type`, `r`.`created_at` as `revision_date`
+FROM `sertifikat` `s`
+JOIN `projects` `p` ON `p`.`id` = `s`.`project_id`
+JOIN `users` `u` ON `u`.`id` = `s`.`kontraktor_id` AND `u`.`role` = \'kontraktor\'
+LEFT JOIN `dokumen_pendukung` `d` ON `d`.`sertifikat_id` = `s`.`id`
+LEFT JOIN `revisions` `r` ON `r`.`sertifikat_id` = `s`.`id`
+WHERE `u`.`role` = \'kontraktor\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `s`.`id` as `sertifikat_id`, `s`.`bulan`, `s`.`tahun`, `s`.`status` as `status_sertifikat`, `s`.`created_at` as `tanggal_sertifikat`, `p`.`name` as `nama_proyek`, `u`.`name` as `nama_kontraktor`, `d`.`nama_file`, `d`.`tipe_dokumen`, `d`.`uploaded_at`, `r`.`field_name`, `r`.`old_value`, `r`.`new_value`, `r`.`change_type`, `r`.`created_at` as `revision_date`
+FROM `sertifikat` `s`
+JOIN `projects` `p` ON `p`.`id` = `s`.`project_id`
+JOIN `users` `u` ON `u`.`id` = `s`.`kontraktor_id` AND `u`.`role` = \'kontraktor\'
+LEFT JOIN `dokumen_pendukung` `d` ON `d`.`sertifikat_id` = `s`.`id`
+LEFT JOIN `revisions` `r` ON `r`.`sertifikat_id` = `s`.`id`
+WHERE `u`.`role` = \'kontraktor\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `s`.`id` as `sertifikat_id`, `s`.`bulan`, `s`.`tahun`, `s`.`status` as `status_sertifikat`, `s`.`created_at` as `tanggal_sertifikat`, `p`.`name` as `nama_proyek`, `u`.`name` as `nama_kontraktor`, `d`.`nama_file`, `d`.`tipe_dokumen`, `d`.`uploaded_at`, `r`.`field_name`, `r`.`old_value`, `r`.`new_value`, `r`.`change_type`, `r`.`created_at` as `revision_date`
+FROM `sertifikat` `s`
+JOIN `projects` `p` ON `p`.`id` = `s`.`project_id`
+JOIN `users` `u` ON `u`.`id` = `s`.`kontraktor_id` AND `u`.`role` = \'kontraktor\'
+LEFT JOIN `dokumen_pendukung` `d` ON `d`.`sertifikat_id` = `s`.`id`
+LEFT JOIN `revisions` `r` ON `r`.`sertifikat_id` = `s`.`id`
+WHERE `u`.`role` = :u.role:', [...], false)
+ 4 APPPATH\Controllers\MainController.php(792): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 11:45:52 --> [Caused by] mysqli_sql_exception: Table 'sisfo_pengajuan.revisions' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `s`.`id` as `sertifikat_id`, `s`.`bulan`, `s`.`tahun`, `s`.`status` as `status_sertifikat`, `s`.`created_at` as `tanggal_sertifikat`, `p`.`name` as `nama_proyek`, `u`.`name` as `nama_kontraktor`, `d`.`nama_file`, `d`.`tipe_dokumen`, `d`.`uploaded_at`, `r`.`field_name`, `r`.`old_value`, `r`.`new_value`, `r`.`change_type`, `r`.`created_at` as `revision_date`
+FROM `sertifikat` `s`
+JOIN `projects` `p` ON `p`.`id` = `s`.`project_id`
+JOIN `users` `u` ON `u`.`id` = `s`.`kontraktor_id` AND `u`.`role` = \'kontraktor\'
+LEFT JOIN `dokumen_pendukung` `d` ON `d`.`sertifikat_id` = `s`.`id`
+LEFT JOIN `revisions` `r` ON `r`.`sertifikat_id` = `s`.`id`
+WHERE `u`.`role` = \'kontraktor\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `s`.`id` as `sertifikat_id`, `s`.`bulan`, `s`.`tahun`, `s`.`status` as `status_sertifikat`, `s`.`created_at` as `tanggal_sertifikat`, `p`.`name` as `nama_proyek`, `u`.`name` as `nama_kontraktor`, `d`.`nama_file`, `d`.`tipe_dokumen`, `d`.`uploaded_at`, `r`.`field_name`, `r`.`old_value`, `r`.`new_value`, `r`.`change_type`, `r`.`created_at` as `revision_date`
+FROM `sertifikat` `s`
+JOIN `projects` `p` ON `p`.`id` = `s`.`project_id`
+JOIN `users` `u` ON `u`.`id` = `s`.`kontraktor_id` AND `u`.`role` = \'kontraktor\'
+LEFT JOIN `dokumen_pendukung` `d` ON `d`.`sertifikat_id` = `s`.`id`
+LEFT JOIN `revisions` `r` ON `r`.`sertifikat_id` = `s`.`id`
+WHERE `u`.`role` = \'kontraktor\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `s`.`id` as `sertifikat_id`, `s`.`bulan`, `s`.`tahun`, `s`.`status` as `status_sertifikat`, `s`.`created_at` as `tanggal_sertifikat`, `p`.`name` as `nama_proyek`, `u`.`name` as `nama_kontraktor`, `d`.`nama_file`, `d`.`tipe_dokumen`, `d`.`uploaded_at`, `r`.`field_name`, `r`.`old_value`, `r`.`new_value`, `r`.`change_type`, `r`.`created_at` as `revision_date`
+FROM `sertifikat` `s`
+JOIN `projects` `p` ON `p`.`id` = `s`.`project_id`
+JOIN `users` `u` ON `u`.`id` = `s`.`kontraktor_id` AND `u`.`role` = \'kontraktor\'
+LEFT JOIN `dokumen_pendukung` `d` ON `d`.`sertifikat_id` = `s`.`id`
+LEFT JOIN `revisions` `r` ON `r`.`sertifikat_id` = `s`.`id`
+WHERE `u`.`role` = \'kontraktor\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `s`.`id` as `sertifikat_id`, `s`.`bulan`, `s`.`tahun`, `s`.`status` as `status_sertifikat`, `s`.`created_at` as `tanggal_sertifikat`, `p`.`name` as `nama_proyek`, `u`.`name` as `nama_kontraktor`, `d`.`nama_file`, `d`.`tipe_dokumen`, `d`.`uploaded_at`, `r`.`field_name`, `r`.`old_value`, `r`.`new_value`, `r`.`change_type`, `r`.`created_at` as `revision_date`
+FROM `sertifikat` `s`
+JOIN `projects` `p` ON `p`.`id` = `s`.`project_id`
+JOIN `users` `u` ON `u`.`id` = `s`.`kontraktor_id` AND `u`.`role` = \'kontraktor\'
+LEFT JOIN `dokumen_pendukung` `d` ON `d`.`sertifikat_id` = `s`.`id`
+LEFT JOIN `revisions` `r` ON `r`.`sertifikat_id` = `s`.`id`
+WHERE `u`.`role` = :u.role:', [...], false)
+ 5 APPPATH\Controllers\MainController.php(792): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-24 11:46:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-24 11:46:10 --> mysqli_sql_exception: Table 'sisfo_pengajuan.revisions' doesn't exist in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `s`.`id`...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `s`.`id`...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `s`.`id`...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `s`.`id`...', Array, false)
+#4 C:\xampp\htdocs\sisfo_pengajuan\app\Controllers\MainController.php(792): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+#6 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+#7 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\sisfo_pengajuan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-05-24 11:46:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'sisfo_pengajuan.revisions' doesn't exist
+[Method: GET, Route: pemeriksaan]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `s`.`id` as `sertifikat_id`, `s`.`bulan`, `s`.`tahun`, `s`.`status` as `status_sertifikat`, `s`.`created_at` as `tanggal_sertifikat`, `p`.`name` as `nama_proyek`, `u`.`name` as `nama_kontraktor`, `d`.`nama_file`, `d`.`tipe_dokumen`, `d`.`uploaded_at`, `r`.`field_name`, `r`.`old_value`, `r`.`new_value`, `r`.`change_type`, `r`.`created_at` as `revision_date`
+FROM `sertifikat` `s`
+JOIN `projects` `p` ON `p`.`id` = `s`.`project_id`
+JOIN `users` `u` ON `u`.`id` = `s`.`kontraktor_id` AND `u`.`role` = \'kontraktor\'
+LEFT JOIN `dokumen_pendukung` `d` ON `d`.`sertifikat_id` = `s`.`id`
+LEFT JOIN `revisions` `r` ON `r`.`sertifikat_id` = `s`.`id`
+WHERE `u`.`role` = :u.role:', [...], false)
+ 2 APPPATH\Controllers\MainController.php(792): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 11:46:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'sisfo_pengajuan.revisions' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `s`.`id` as `sertifikat_id`, `s`.`bulan`, `s`.`tahun`, `s`.`status` as `status_sertifikat`, `s`.`created_at` as `tanggal_sertifikat`, `p`.`name` as `nama_proyek`, `u`.`name` as `nama_kontraktor`, `d`.`nama_file`, `d`.`tipe_dokumen`, `d`.`uploaded_at`, `r`.`field_name`, `r`.`old_value`, `r`.`new_value`, `r`.`change_type`, `r`.`created_at` as `revision_date`
+FROM `sertifikat` `s`
+JOIN `projects` `p` ON `p`.`id` = `s`.`project_id`
+JOIN `users` `u` ON `u`.`id` = `s`.`kontraktor_id` AND `u`.`role` = \'kontraktor\'
+LEFT JOIN `dokumen_pendukung` `d` ON `d`.`sertifikat_id` = `s`.`id`
+LEFT JOIN `revisions` `r` ON `r`.`sertifikat_id` = `s`.`id`
+WHERE `u`.`role` = \'kontraktor\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `s`.`id` as `sertifikat_id`, `s`.`bulan`, `s`.`tahun`, `s`.`status` as `status_sertifikat`, `s`.`created_at` as `tanggal_sertifikat`, `p`.`name` as `nama_proyek`, `u`.`name` as `nama_kontraktor`, `d`.`nama_file`, `d`.`tipe_dokumen`, `d`.`uploaded_at`, `r`.`field_name`, `r`.`old_value`, `r`.`new_value`, `r`.`change_type`, `r`.`created_at` as `revision_date`
+FROM `sertifikat` `s`
+JOIN `projects` `p` ON `p`.`id` = `s`.`project_id`
+JOIN `users` `u` ON `u`.`id` = `s`.`kontraktor_id` AND `u`.`role` = \'kontraktor\'
+LEFT JOIN `dokumen_pendukung` `d` ON `d`.`sertifikat_id` = `s`.`id`
+LEFT JOIN `revisions` `r` ON `r`.`sertifikat_id` = `s`.`id`
+WHERE `u`.`role` = \'kontraktor\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `s`.`id` as `sertifikat_id`, `s`.`bulan`, `s`.`tahun`, `s`.`status` as `status_sertifikat`, `s`.`created_at` as `tanggal_sertifikat`, `p`.`name` as `nama_proyek`, `u`.`name` as `nama_kontraktor`, `d`.`nama_file`, `d`.`tipe_dokumen`, `d`.`uploaded_at`, `r`.`field_name`, `r`.`old_value`, `r`.`new_value`, `r`.`change_type`, `r`.`created_at` as `revision_date`
+FROM `sertifikat` `s`
+JOIN `projects` `p` ON `p`.`id` = `s`.`project_id`
+JOIN `users` `u` ON `u`.`id` = `s`.`kontraktor_id` AND `u`.`role` = \'kontraktor\'
+LEFT JOIN `dokumen_pendukung` `d` ON `d`.`sertifikat_id` = `s`.`id`
+LEFT JOIN `revisions` `r` ON `r`.`sertifikat_id` = `s`.`id`
+WHERE `u`.`role` = :u.role:', [...], false)
+ 4 APPPATH\Controllers\MainController.php(792): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 11:46:10 --> [Caused by] mysqli_sql_exception: Table 'sisfo_pengajuan.revisions' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `s`.`id` as `sertifikat_id`, `s`.`bulan`, `s`.`tahun`, `s`.`status` as `status_sertifikat`, `s`.`created_at` as `tanggal_sertifikat`, `p`.`name` as `nama_proyek`, `u`.`name` as `nama_kontraktor`, `d`.`nama_file`, `d`.`tipe_dokumen`, `d`.`uploaded_at`, `r`.`field_name`, `r`.`old_value`, `r`.`new_value`, `r`.`change_type`, `r`.`created_at` as `revision_date`
+FROM `sertifikat` `s`
+JOIN `projects` `p` ON `p`.`id` = `s`.`project_id`
+JOIN `users` `u` ON `u`.`id` = `s`.`kontraktor_id` AND `u`.`role` = \'kontraktor\'
+LEFT JOIN `dokumen_pendukung` `d` ON `d`.`sertifikat_id` = `s`.`id`
+LEFT JOIN `revisions` `r` ON `r`.`sertifikat_id` = `s`.`id`
+WHERE `u`.`role` = \'kontraktor\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `s`.`id` as `sertifikat_id`, `s`.`bulan`, `s`.`tahun`, `s`.`status` as `status_sertifikat`, `s`.`created_at` as `tanggal_sertifikat`, `p`.`name` as `nama_proyek`, `u`.`name` as `nama_kontraktor`, `d`.`nama_file`, `d`.`tipe_dokumen`, `d`.`uploaded_at`, `r`.`field_name`, `r`.`old_value`, `r`.`new_value`, `r`.`change_type`, `r`.`created_at` as `revision_date`
+FROM `sertifikat` `s`
+JOIN `projects` `p` ON `p`.`id` = `s`.`project_id`
+JOIN `users` `u` ON `u`.`id` = `s`.`kontraktor_id` AND `u`.`role` = \'kontraktor\'
+LEFT JOIN `dokumen_pendukung` `d` ON `d`.`sertifikat_id` = `s`.`id`
+LEFT JOIN `revisions` `r` ON `r`.`sertifikat_id` = `s`.`id`
+WHERE `u`.`role` = \'kontraktor\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `s`.`id` as `sertifikat_id`, `s`.`bulan`, `s`.`tahun`, `s`.`status` as `status_sertifikat`, `s`.`created_at` as `tanggal_sertifikat`, `p`.`name` as `nama_proyek`, `u`.`name` as `nama_kontraktor`, `d`.`nama_file`, `d`.`tipe_dokumen`, `d`.`uploaded_at`, `r`.`field_name`, `r`.`old_value`, `r`.`new_value`, `r`.`change_type`, `r`.`created_at` as `revision_date`
+FROM `sertifikat` `s`
+JOIN `projects` `p` ON `p`.`id` = `s`.`project_id`
+JOIN `users` `u` ON `u`.`id` = `s`.`kontraktor_id` AND `u`.`role` = \'kontraktor\'
+LEFT JOIN `dokumen_pendukung` `d` ON `d`.`sertifikat_id` = `s`.`id`
+LEFT JOIN `revisions` `r` ON `r`.`sertifikat_id` = `s`.`id`
+WHERE `u`.`role` = \'kontraktor\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `s`.`id` as `sertifikat_id`, `s`.`bulan`, `s`.`tahun`, `s`.`status` as `status_sertifikat`, `s`.`created_at` as `tanggal_sertifikat`, `p`.`name` as `nama_proyek`, `u`.`name` as `nama_kontraktor`, `d`.`nama_file`, `d`.`tipe_dokumen`, `d`.`uploaded_at`, `r`.`field_name`, `r`.`old_value`, `r`.`new_value`, `r`.`change_type`, `r`.`created_at` as `revision_date`
+FROM `sertifikat` `s`
+JOIN `projects` `p` ON `p`.`id` = `s`.`project_id`
+JOIN `users` `u` ON `u`.`id` = `s`.`kontraktor_id` AND `u`.`role` = \'kontraktor\'
+LEFT JOIN `dokumen_pendukung` `d` ON `d`.`sertifikat_id` = `s`.`id`
+LEFT JOIN `revisions` `r` ON `r`.`sertifikat_id` = `s`.`id`
+WHERE `u`.`role` = :u.role:', [...], false)
+ 5 APPPATH\Controllers\MainController.php(792): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+ERROR - 2025-05-24 12:32:13 --> mysqli_sql_exception: Invalid default value for 'tanggal_catatan' in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `c...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `c...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `c...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `c...')
+#4 C:\xampp\htdocs\sisfo_pengajuan\app\Database\Migrations\2025-05-24-122846_CreateCatatanRevisiTabel.php(65): CodeIgniter\Database\Forge->createTable('catatan_revisi', true, Array)
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateCatatanRevisiTabel->up()
+#6 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\sisfo_pengajuan\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\sisfo_pengajuan\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\sisfo_pengajuan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\sisfo_pengajuan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-05-24 12:32:53 --> mysqli_sql_exception: Invalid default value for 'tanggal_catatan' in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `c...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `c...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `c...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `c...')
+#4 C:\xampp\htdocs\sisfo_pengajuan\app\Database\Migrations\2025-05-24-122846_CreateCatatanRevisiTabel.php(65): CodeIgniter\Database\Forge->createTable('catatan_revisi', true, Array)
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateCatatanRevisiTabel->up()
+#6 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\sisfo_pengajuan\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\sisfo_pengajuan\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\sisfo_pengajuan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\sisfo_pengajuan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-05-24 12:35:21 --> mysqli_sql_exception: Invalid default value for 'tanggal_catatan' in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `c...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `c...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `c...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `c...')
+#4 C:\xampp\htdocs\sisfo_pengajuan\app\Database\Migrations\2025-05-24-122846_CreateCatatanRevisiTabel.php(65): CodeIgniter\Database\Forge->createTable('catatan_revisi', true, Array)
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateCatatanRevisiTabel->up()
+#6 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\sisfo_pengajuan\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\sisfo_pengajuan\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\sisfo_pengajuan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\sisfo_pengajuan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-05-24 12:35:57 --> mysqli_sql_exception: Invalid default value for 'tanggal_catatan' in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `c...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `c...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `c...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `c...')
+#4 C:\xampp\htdocs\sisfo_pengajuan\app\Database\Migrations\2025-05-24-122846_CreateCatatanRevisiTabel.php(65): CodeIgniter\Database\Forge->createTable('catatan_revisi', true, Array)
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateCatatanRevisiTabel->up()
+#6 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\sisfo_pengajuan\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\sisfo_pengajuan\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\sisfo_pengajuan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\sisfo_pengajuan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-05-24 12:38:32 --> mysqli_sql_exception: Invalid default value for 'tanggal_pemeriksaan' in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `p...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `p...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `p...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `p...')
+#4 C:\xampp\htdocs\sisfo_pengajuan\app\Database\Migrations\2025-05-24-123820_RecreatePemeriksaanTable.php(67): CodeIgniter\Database\Forge->createTable('pemeriksaan', true, Array)
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MigrationRunner.php(876): App\Database\Migrations\RecreatePemeriksaanTable->up()
+#6 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\sisfo_pengajuan\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\sisfo_pengajuan\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\sisfo_pengajuan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\sisfo_pengajuan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-05-24 12:40:30 --> mysqli_sql_exception: Invalid default value for 'tanggal_pemeriksaan' in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `p...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `p...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `p...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `p...')
+#4 C:\xampp\htdocs\sisfo_pengajuan\app\Database\Migrations\2025-05-24-123820_RecreatePemeriksaanTable.php(67): CodeIgniter\Database\Forge->createTable('pemeriksaan', true, Array)
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MigrationRunner.php(876): App\Database\Migrations\RecreatePemeriksaanTable->up()
+#6 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\sisfo_pengajuan\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\sisfo_pengajuan\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\sisfo_pengajuan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\sisfo_pengajuan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+DEBUG - 2025-05-24 13:39:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-24 13:39:17 --> mysqli_sql_exception: Table 'sisfo_pengajuan.user' doesn't exist in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pemerik...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pemerik...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pemerik...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pemerik...', Array, false)
+#4 C:\xampp\htdocs\sisfo_pengajuan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\sisfo_pengajuan\app\Models\Pemeriksaan.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\sisfo_pengajuan\app\Controllers\MainController.php(778): App\Models\Pemeriksaan->getAllPemeriksaan()
+#8 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+#9 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+#10 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\sisfo_pengajuan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\sisfo_pengajuan\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-05-24 13:39:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'sisfo_pengajuan.user' doesn't exist
+[Method: GET, Route: pemeriksaan]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pemeriksaan`.*, `user`.`name` as `kontraktor_name`
+FROM `pemeriksaan`
+JOIN `user` ON `user`.`id` = `pemeriksaan`.`kontraktor_id`
+ORDER BY `tanggal_upload` DESC', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Pemeriksaan.php(21): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\MainController.php(778): App\Models\Pemeriksaan->getAllPemeriksaan()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 13:39:17 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'sisfo_pengajuan.user' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pemeriksaan`.*, `user`.`name` as `kontraktor_name`
+FROM `pemeriksaan`
+JOIN `user` ON `user`.`id` = `pemeriksaan`.`kontraktor_id`
+ORDER BY `tanggal_upload` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pemeriksaan`.*, `user`.`name` as `kontraktor_name`
+FROM `pemeriksaan`
+JOIN `user` ON `user`.`id` = `pemeriksaan`.`kontraktor_id`
+ORDER BY `tanggal_upload` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pemeriksaan`.*, `user`.`name` as `kontraktor_name`
+FROM `pemeriksaan`
+JOIN `user` ON `user`.`id` = `pemeriksaan`.`kontraktor_id`
+ORDER BY `tanggal_upload` DESC', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\Pemeriksaan.php(21): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\MainController.php(778): App\Models\Pemeriksaan->getAllPemeriksaan()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 13:39:17 --> [Caused by] mysqli_sql_exception: Table 'sisfo_pengajuan.user' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pemeriksaan`.*, `user`.`name` as `kontraktor_name`
+FROM `pemeriksaan`
+JOIN `user` ON `user`.`id` = `pemeriksaan`.`kontraktor_id`
+ORDER BY `tanggal_upload` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pemeriksaan`.*, `user`.`name` as `kontraktor_name`
+FROM `pemeriksaan`
+JOIN `user` ON `user`.`id` = `pemeriksaan`.`kontraktor_id`
+ORDER BY `tanggal_upload` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pemeriksaan`.*, `user`.`name` as `kontraktor_name`
+FROM `pemeriksaan`
+JOIN `user` ON `user`.`id` = `pemeriksaan`.`kontraktor_id`
+ORDER BY `tanggal_upload` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pemeriksaan`.*, `user`.`name` as `kontraktor_name`
+FROM `pemeriksaan`
+JOIN `user` ON `user`.`id` = `pemeriksaan`.`kontraktor_id`
+ORDER BY `tanggal_upload` DESC', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\Pemeriksaan.php(21): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\MainController.php(778): App\Models\Pemeriksaan->getAllPemeriksaan()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-24 13:39:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-24 13:39:52 --> mysqli_sql_exception: Unknown column 'pemeriksaan.kontraktor_id' in 'on clause' in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pemerik...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pemerik...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pemerik...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pemerik...', Array, false)
+#4 C:\xampp\htdocs\sisfo_pengajuan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\sisfo_pengajuan\app\Models\Pemeriksaan.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\sisfo_pengajuan\app\Controllers\MainController.php(778): App\Models\Pemeriksaan->getAllPemeriksaan()
+#8 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+#9 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+#10 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\sisfo_pengajuan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\sisfo_pengajuan\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-05-24 13:39:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pemeriksaan.kontraktor_id' in 'on clause'
+[Method: GET, Route: pemeriksaan]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pemeriksaan`.*, `users`.`name` as `kontraktor_name`
+FROM `pemeriksaan`
+JOIN `users` ON `users`.`id` = `pemeriksaan`.`kontraktor_id`
+ORDER BY `tanggal_upload` DESC', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Pemeriksaan.php(21): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\MainController.php(778): App\Models\Pemeriksaan->getAllPemeriksaan()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 13:39:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pemeriksaan.kontraktor_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pemeriksaan`.*, `users`.`name` as `kontraktor_name`
+FROM `pemeriksaan`
+JOIN `users` ON `users`.`id` = `pemeriksaan`.`kontraktor_id`
+ORDER BY `tanggal_upload` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pemeriksaan`.*, `users`.`name` as `kontraktor_name`
+FROM `pemeriksaan`
+JOIN `users` ON `users`.`id` = `pemeriksaan`.`kontraktor_id`
+ORDER BY `tanggal_upload` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pemeriksaan`.*, `users`.`name` as `kontraktor_name`
+FROM `pemeriksaan`
+JOIN `users` ON `users`.`id` = `pemeriksaan`.`kontraktor_id`
+ORDER BY `tanggal_upload` DESC', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\Pemeriksaan.php(21): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\MainController.php(778): App\Models\Pemeriksaan->getAllPemeriksaan()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 13:39:52 --> [Caused by] mysqli_sql_exception: Unknown column 'pemeriksaan.kontraktor_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pemeriksaan`.*, `users`.`name` as `kontraktor_name`
+FROM `pemeriksaan`
+JOIN `users` ON `users`.`id` = `pemeriksaan`.`kontraktor_id`
+ORDER BY `tanggal_upload` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pemeriksaan`.*, `users`.`name` as `kontraktor_name`
+FROM `pemeriksaan`
+JOIN `users` ON `users`.`id` = `pemeriksaan`.`kontraktor_id`
+ORDER BY `tanggal_upload` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pemeriksaan`.*, `users`.`name` as `kontraktor_name`
+FROM `pemeriksaan`
+JOIN `users` ON `users`.`id` = `pemeriksaan`.`kontraktor_id`
+ORDER BY `tanggal_upload` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pemeriksaan`.*, `users`.`name` as `kontraktor_name`
+FROM `pemeriksaan`
+JOIN `users` ON `users`.`id` = `pemeriksaan`.`kontraktor_id`
+ORDER BY `tanggal_upload` DESC', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\Pemeriksaan.php(21): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\MainController.php(778): App\Models\Pemeriksaan->getAllPemeriksaan()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-24 14:09:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 14:11:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 14:28:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 14:34:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-24 14:34:41 --> mysqli_sql_exception: Table 'sisfo_pengajuan.kontraktor' doesn't exist in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `sertifi...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `sertifi...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `sertifi...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `sertifi...', Array, false)
+#4 C:\xampp\htdocs\sisfo_pengajuan\app\Controllers\MainController.php(785): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+#6 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+#7 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\sisfo_pengajuan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-05-24 14:34:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'sisfo_pengajuan.kontraktor' doesn't exist
+[Method: GET, Route: pemeriksaan]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `sertifikat`.`id`, `sertifikat`.`nama_file`, `sertifikat`.`tanggal_upload`, `sertifikat`.`status_verifikasi`, `projects`.`nama_project`, `kontraktor`.`nama_kontraktor`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `kontraktor` ON `projects`.`kontraktor_id` = `kontraktor`.`id`', [], false)
+ 2 APPPATH\Controllers\MainController.php(785): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 14:34:41 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'sisfo_pengajuan.kontraktor' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `sertifikat`.`id`, `sertifikat`.`nama_file`, `sertifikat`.`tanggal_upload`, `sertifikat`.`status_verifikasi`, `projects`.`nama_project`, `kontraktor`.`nama_kontraktor`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `kontraktor` ON `projects`.`kontraktor_id` = `kontraktor`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `sertifikat`.`id`, `sertifikat`.`nama_file`, `sertifikat`.`tanggal_upload`, `sertifikat`.`status_verifikasi`, `projects`.`nama_project`, `kontraktor`.`nama_kontraktor`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `kontraktor` ON `projects`.`kontraktor_id` = `kontraktor`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `sertifikat`.`id`, `sertifikat`.`nama_file`, `sertifikat`.`tanggal_upload`, `sertifikat`.`status_verifikasi`, `projects`.`nama_project`, `kontraktor`.`nama_kontraktor`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `kontraktor` ON `projects`.`kontraktor_id` = `kontraktor`.`id`', [], false)
+ 4 APPPATH\Controllers\MainController.php(785): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 14:34:41 --> [Caused by] mysqli_sql_exception: Table 'sisfo_pengajuan.kontraktor' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `sertifikat`.`id`, `sertifikat`.`nama_file`, `sertifikat`.`tanggal_upload`, `sertifikat`.`status_verifikasi`, `projects`.`nama_project`, `kontraktor`.`nama_kontraktor`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `kontraktor` ON `projects`.`kontraktor_id` = `kontraktor`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `sertifikat`.`id`, `sertifikat`.`nama_file`, `sertifikat`.`tanggal_upload`, `sertifikat`.`status_verifikasi`, `projects`.`nama_project`, `kontraktor`.`nama_kontraktor`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `kontraktor` ON `projects`.`kontraktor_id` = `kontraktor`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `sertifikat`.`id`, `sertifikat`.`nama_file`, `sertifikat`.`tanggal_upload`, `sertifikat`.`status_verifikasi`, `projects`.`nama_project`, `kontraktor`.`nama_kontraktor`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `kontraktor` ON `projects`.`kontraktor_id` = `kontraktor`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `sertifikat`.`id`, `sertifikat`.`nama_file`, `sertifikat`.`tanggal_upload`, `sertifikat`.`status_verifikasi`, `projects`.`nama_project`, `kontraktor`.`nama_kontraktor`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `kontraktor` ON `projects`.`kontraktor_id` = `kontraktor`.`id`', [], false)
+ 5 APPPATH\Controllers\MainController.php(785): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-24 14:35:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-24 14:35:51 --> mysqli_sql_exception: Unknown column 'sertifikat.nama_file' in 'field list' in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `sertifi...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `sertifi...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `sertifi...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `sertifi...', Array, false)
+#4 C:\xampp\htdocs\sisfo_pengajuan\app\Controllers\MainController.php(785): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+#6 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+#7 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\sisfo_pengajuan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-05-24 14:35:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sertifikat.nama_file' in 'field list'
+[Method: GET, Route: pemeriksaan]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `sertifikat`.`id`, `sertifikat`.`nama_file`, `sertifikat`.`tanggal_upload`, `sertifikat`.`status_verifikasi`, `projects`.`nama_project`, `users`.`name`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `users` ON `projects`.`kontraktor_id` = `users`.`id`', [], false)
+ 2 APPPATH\Controllers\MainController.php(785): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 14:35:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sertifikat.nama_file' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `sertifikat`.`id`, `sertifikat`.`nama_file`, `sertifikat`.`tanggal_upload`, `sertifikat`.`status_verifikasi`, `projects`.`nama_project`, `users`.`name`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `users` ON `projects`.`kontraktor_id` = `users`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `sertifikat`.`id`, `sertifikat`.`nama_file`, `sertifikat`.`tanggal_upload`, `sertifikat`.`status_verifikasi`, `projects`.`nama_project`, `users`.`name`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `users` ON `projects`.`kontraktor_id` = `users`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `sertifikat`.`id`, `sertifikat`.`nama_file`, `sertifikat`.`tanggal_upload`, `sertifikat`.`status_verifikasi`, `projects`.`nama_project`, `users`.`name`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `users` ON `projects`.`kontraktor_id` = `users`.`id`', [], false)
+ 4 APPPATH\Controllers\MainController.php(785): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 14:35:51 --> [Caused by] mysqli_sql_exception: Unknown column 'sertifikat.nama_file' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `sertifikat`.`id`, `sertifikat`.`nama_file`, `sertifikat`.`tanggal_upload`, `sertifikat`.`status_verifikasi`, `projects`.`nama_project`, `users`.`name`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `users` ON `projects`.`kontraktor_id` = `users`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `sertifikat`.`id`, `sertifikat`.`nama_file`, `sertifikat`.`tanggal_upload`, `sertifikat`.`status_verifikasi`, `projects`.`nama_project`, `users`.`name`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `users` ON `projects`.`kontraktor_id` = `users`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `sertifikat`.`id`, `sertifikat`.`nama_file`, `sertifikat`.`tanggal_upload`, `sertifikat`.`status_verifikasi`, `projects`.`nama_project`, `users`.`name`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `users` ON `projects`.`kontraktor_id` = `users`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `sertifikat`.`id`, `sertifikat`.`nama_file`, `sertifikat`.`tanggal_upload`, `sertifikat`.`status_verifikasi`, `projects`.`nama_project`, `users`.`name`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `users` ON `projects`.`kontraktor_id` = `users`.`id`', [], false)
+ 5 APPPATH\Controllers\MainController.php(785): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-24 14:36:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-24 14:36:19 --> mysqli_sql_exception: Unknown column 'projects.nama_project' in 'field list' in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `sertifi...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `sertifi...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `sertifi...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `sertifi...', Array, false)
+#4 C:\xampp\htdocs\sisfo_pengajuan\app\Controllers\MainController.php(785): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+#6 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+#7 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\sisfo_pengajuan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-05-24 14:36:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'projects.nama_project' in 'field list'
+[Method: GET, Route: pemeriksaan]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `sertifikat`.*, `projects`.`nama_project`, `users`.`name`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `users` ON `projects`.`kontraktor_id` = `users`.`id`', [], false)
+ 2 APPPATH\Controllers\MainController.php(785): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 14:36:19 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'projects.nama_project' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `sertifikat`.*, `projects`.`nama_project`, `users`.`name`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `users` ON `projects`.`kontraktor_id` = `users`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `sertifikat`.*, `projects`.`nama_project`, `users`.`name`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `users` ON `projects`.`kontraktor_id` = `users`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `sertifikat`.*, `projects`.`nama_project`, `users`.`name`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `users` ON `projects`.`kontraktor_id` = `users`.`id`', [], false)
+ 4 APPPATH\Controllers\MainController.php(785): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 14:36:19 --> [Caused by] mysqli_sql_exception: Unknown column 'projects.nama_project' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `sertifikat`.*, `projects`.`nama_project`, `users`.`name`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `users` ON `projects`.`kontraktor_id` = `users`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `sertifikat`.*, `projects`.`nama_project`, `users`.`name`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `users` ON `projects`.`kontraktor_id` = `users`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `sertifikat`.*, `projects`.`nama_project`, `users`.`name`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `users` ON `projects`.`kontraktor_id` = `users`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `sertifikat`.*, `projects`.`nama_project`, `users`.`name`
+FROM `sertifikat`
+JOIN `projects` ON `sertifikat`.`project_id` = `projects`.`id`
+JOIN `users` ON `projects`.`kontraktor_id` = `users`.`id`', [], false)
+ 5 APPPATH\Controllers\MainController.php(785): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-24 14:36:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-24 14:36:31 --> ErrorException: Undefined array key "project_name"
+[Method: GET, Route: pemeriksaan]
+in APPPATH\Views\backend\pages\pemeriksaan.php on line 219.
+ 1 APPPATH\Views\backend\pages\pemeriksaan.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "project_name"', 'C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Views\\backend\\pages\\pemeriksaan.php', 219)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Views\\backend\\pages\\pemeriksaan.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/pages/pemeriksaan', [], true)
+ 5 APPPATH\Controllers\MainController.php(794): view('backend/pages/pemeriksaan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-24 14:37:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-24 14:37:11 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: pemeriksaan]
+in APPPATH\Views\backend\pages\pemeriksaan.php on line 219.
+ 1 APPPATH\Views\backend\pages\pemeriksaan.php(219): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Views\\backend\\pages\\pemeriksaan.php', 219)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Views\\backend\\pages\\pemeriksaan.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/pages/pemeriksaan', [], true)
+ 5 APPPATH\Controllers\MainController.php(794): view('backend/pages/pemeriksaan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-24 14:37:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-24 14:37:19 --> ErrorException: Undefined array key "document_type"
+[Method: GET, Route: pemeriksaan]
+in APPPATH\Views\backend\pages\pemeriksaan.php on line 221.
+ 1 APPPATH\Views\backend\pages\pemeriksaan.php(221): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "document_type"', 'C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Views\\backend\\pages\\pemeriksaan.php', 221)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Views\\backend\\pages\\pemeriksaan.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/pages/pemeriksaan', [], true)
+ 5 APPPATH\Controllers\MainController.php(794): view('backend/pages/pemeriksaan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-24 14:37:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-24 14:37:49 --> ErrorException: Undefined array key "document_type"
+[Method: GET, Route: pemeriksaan]
+in APPPATH\Views\backend\pages\pemeriksaan.php on line 221.
+ 1 APPPATH\Views\backend\pages\pemeriksaan.php(221): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "document_type"', 'C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Views\\backend\\pages\\pemeriksaan.php', 221)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Views\\backend\\pages\\pemeriksaan.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/pages/pemeriksaan', [], true)
+ 5 APPPATH\Controllers\MainController.php(794): view('backend/pages/pemeriksaan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-24 14:37:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-24 14:37:58 --> ErrorException: Undefined array key "upload_date"
+[Method: GET, Route: pemeriksaan]
+in APPPATH\Views\backend\pages\pemeriksaan.php on line 222.
+ 1 APPPATH\Views\backend\pages\pemeriksaan.php(222): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "upload_date"', 'C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Views\\backend\\pages\\pemeriksaan.php', 222)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Views\\backend\\pages\\pemeriksaan.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/pages/pemeriksaan', [], true)
+ 5 APPPATH\Controllers\MainController.php(794): view('backend/pages/pemeriksaan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-24 14:38:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-24 17:01:07 --> CodeIgniter\Exceptions\InvalidArgumentException: Missing argument for "(:any)" in route "get_file_pemeriksaan/(:any)".
+[Method: GET, Route: pemeriksaan]
+in SYSTEMPATH\Router\RouteCollection.php on line 1384.
+ 1 SYSTEMPATH\Router\RouteCollection.php(1205): CodeIgniter\Router\RouteCollection->buildReverseRoute('get_file_pemeriksaan/(:any)', [])
+ 2 SYSTEMPATH\Common.php(955): CodeIgniter\Router\RouteCollection->reverseRoute('get_file_pemeriksaan')
+ 3 APPPATH\Views\backend\pages\pemeriksaan.php(300): route_to('get_file_pemeriksaan')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Views\\backend\\pages\\pemeriksaan.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/pages/pemeriksaan', [], true)
+ 7 APPPATH\Controllers\MainController.php(794): view('backend/pages/pemeriksaan', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-24 17:03:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-24 17:03:36 --> CodeIgniter\Exceptions\InvalidArgumentException: Missing argument for "(:any)" in route "get_file_pemeriksaan/(:any)".
+[Method: GET, Route: pemeriksaan]
+in SYSTEMPATH\Router\RouteCollection.php on line 1384.
+ 1 SYSTEMPATH\Router\RouteCollection.php(1205): CodeIgniter\Router\RouteCollection->buildReverseRoute('get_file_pemeriksaan/(:any)', [])
+ 2 SYSTEMPATH\Common.php(955): CodeIgniter\Router\RouteCollection->reverseRoute('get_file_pemeriksaan')
+ 3 APPPATH\Views\backend\pages\pemeriksaan.php(300): route_to('get_file_pemeriksaan')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Views\\backend\\pages\\pemeriksaan.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/pages/pemeriksaan', [], true)
+ 7 APPPATH\Controllers\MainController.php(794): view('backend/pages/pemeriksaan', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-24 17:25:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-24 17:25:07 --> CodeIgniter\Exceptions\InvalidArgumentException: Missing argument for "(:any)" in route "get_file_pemeriksaan/(:any)".
+[Method: GET, Route: pemeriksaan]
+in SYSTEMPATH\Router\RouteCollection.php on line 1384.
+ 1 SYSTEMPATH\Router\RouteCollection.php(1205): CodeIgniter\Router\RouteCollection->buildReverseRoute('get_file_pemeriksaan/(:any)', [])
+ 2 SYSTEMPATH\Common.php(955): CodeIgniter\Router\RouteCollection->reverseRoute('get_file_pemeriksaan')
+ 3 APPPATH\Views\backend\pages\pemeriksaan.php(300): route_to('get_file_pemeriksaan')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\sisfo_pengajuan\\app\\Views\\backend\\pages\\pemeriksaan.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend/pages/pemeriksaan', [], true)
+ 7 APPPATH\Controllers\MainController.php(794): view('backend/pages/pemeriksaan', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->pagePemeriksaan()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-24 17:25:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-24 17:25:46 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "$121"
+[Method: GET, Route: get_file_pemeriksaan/$121]
+in SYSTEMPATH\Router\Router.php on line 741.
+ 1 SYSTEMPATH\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('get_file_pemeriksaan/$121')
+ 2 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('get_file_pemeriksaan/$121')
+ 3 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-24 17:26:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-24 17:26:41 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "$120"
+[Method: GET, Route: get_file_pemeriksaan/$120]
+in SYSTEMPATH\Router\Router.php on line 741.
+ 1 SYSTEMPATH\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('get_file_pemeriksaan/$120')
+ 2 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('get_file_pemeriksaan/$120')
+ 3 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-24 17:45:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 17:45:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-24 17:45:35 --> mysqli_sql_exception: Unknown column 'jenis_file' in 'where clause' in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\sisfo_pengajuan\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\sisfo_pengajuan\app\Controllers\MainController.php(828): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(933): App\Controllers\MainController->getFileAndPemeriksaan('20')
+#8 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+#9 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\sisfo_pengajuan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\sisfo_pengajuan\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-05-24 17:45:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'jenis_file' in 'where clause'
+[Method: GET, Route: get_file_pemeriksaan/20]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pemeriksaan`
+WHERE `sertifikat_id` = :sertifikat_id:
+AND `jenis_file` = :jenis_file:
+ORDER BY `tanggal_pemeriksaan` DESC
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\MainController.php(828): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->getFileAndPemeriksaan('20')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 17:45:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'jenis_file' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pemeriksaan`
+WHERE `sertifikat_id` = \'20\'
+AND `jenis_file` = \'sertifikat_bulanan\'
+ORDER BY `tanggal_pemeriksaan` DESC
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pemeriksaan`
+WHERE `sertifikat_id` = \'20\'
+AND `jenis_file` = \'sertifikat_bulanan\'
+ORDER BY `tanggal_pemeriksaan` DESC
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pemeriksaan`
+WHERE `sertifikat_id` = :sertifikat_id:
+AND `jenis_file` = :jenis_file:
+ORDER BY `tanggal_pemeriksaan` DESC
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\MainController.php(828): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->getFileAndPemeriksaan('20')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 17:45:35 --> [Caused by] mysqli_sql_exception: Unknown column 'jenis_file' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `pemeriksaan`
+WHERE `sertifikat_id` = \'20\'
+AND `jenis_file` = \'sertifikat_bulanan\'
+ORDER BY `tanggal_pemeriksaan` DESC
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pemeriksaan`
+WHERE `sertifikat_id` = \'20\'
+AND `jenis_file` = \'sertifikat_bulanan\'
+ORDER BY `tanggal_pemeriksaan` DESC
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pemeriksaan`
+WHERE `sertifikat_id` = \'20\'
+AND `jenis_file` = \'sertifikat_bulanan\'
+ORDER BY `tanggal_pemeriksaan` DESC
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pemeriksaan`
+WHERE `sertifikat_id` = :sertifikat_id:
+AND `jenis_file` = :jenis_file:
+ORDER BY `tanggal_pemeriksaan` DESC
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\MainController.php(828): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->getFileAndPemeriksaan('20')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-24 17:47:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 17:47:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 18:03:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 18:03:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 18:04:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 18:04:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 18:05:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 18:05:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 18:07:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 18:07:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 20:38:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 20:38:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 20:38:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 20:38:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 20:38:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 20:38:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 20:39:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 20:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 20:49:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 20:49:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 20:50:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 20:50:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 20:51:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-24 21:05:27 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`sisfo_pengajuan`.`pemeriksaan`, CONSTRAINT `fk_pemeriksaan_sertifikat` FOREIGN KEY (`sertifikat_id`) REFERENCES `sertifikat` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sisfo_pengajuan\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\BaseModel.php(843): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\sisfo_pengajuan\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\sisfo_pengajuan\app\Controllers\MainController.php(875): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(933): App\Controllers\MainController->saveMultiple()
+#9 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+#10 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\sisfo_pengajuan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\sisfo_pengajuan\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-05-24 21:05:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`sisfo_pengajuan`.`pemeriksaan`, CONSTRAINT `fk_pemeriksaan_sertifikat` FOREIGN KEY (`sertifikat_id`) REFERENCES `sertifikat` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[Method: POST, Route: save-multiple]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (:jenis_file:, :pemeriksa_id:, :status_pemeriksaan:, :tanggal_pemeriksaan:, :catatan_umum:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\MainController.php(875): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->saveMultiple()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 21:05:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`sisfo_pengajuan`.`pemeriksaan`, CONSTRAINT `fk_pemeriksaan_sertifikat` FOREIGN KEY (`sertifikat_id`) REFERENCES `sertifikat` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (\'sertifikat_bulanan\', \'4\', \'disetujui\', \'2025-05-24 21:05:27\', NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (\'sertifikat_bulanan\', \'4\', \'disetujui\', \'2025-05-24 21:05:27\', NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (:jenis_file:, :pemeriksa_id:, :status_pemeriksaan:, :tanggal_pemeriksaan:, :catatan_umum:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\MainController.php(875): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->saveMultiple()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 21:05:27 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`sisfo_pengajuan`.`pemeriksaan`, CONSTRAINT `fk_pemeriksaan_sertifikat` FOREIGN KEY (`sertifikat_id`) REFERENCES `sertifikat` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (\'sertifikat_bulanan\', \'4\', \'disetujui\', \'2025-05-24 21:05:27\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (\'sertifikat_bulanan\', \'4\', \'disetujui\', \'2025-05-24 21:05:27\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (\'sertifikat_bulanan\', \'4\', \'disetujui\', \'2025-05-24 21:05:27\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (:jenis_file:, :pemeriksa_id:, :status_pemeriksaan:, :tanggal_pemeriksaan:, :catatan_umum:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\MainController.php(875): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->saveMultiple()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+ERROR - 2025-05-24 21:05:36 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`sisfo_pengajuan`.`pemeriksaan`, CONSTRAINT `fk_pemeriksaan_sertifikat` FOREIGN KEY (`sertifikat_id`) REFERENCES `sertifikat` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sisfo_pengajuan\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\BaseModel.php(843): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\sisfo_pengajuan\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\sisfo_pengajuan\app\Controllers\MainController.php(875): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(933): App\Controllers\MainController->saveMultiple()
+#9 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+#10 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\sisfo_pengajuan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\sisfo_pengajuan\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-05-24 21:05:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`sisfo_pengajuan`.`pemeriksaan`, CONSTRAINT `fk_pemeriksaan_sertifikat` FOREIGN KEY (`sertifikat_id`) REFERENCES `sertifikat` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[Method: POST, Route: save-multiple]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (:jenis_file:, :pemeriksa_id:, :status_pemeriksaan:, :tanggal_pemeriksaan:, :catatan_umum:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\MainController.php(875): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->saveMultiple()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 21:05:36 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`sisfo_pengajuan`.`pemeriksaan`, CONSTRAINT `fk_pemeriksaan_sertifikat` FOREIGN KEY (`sertifikat_id`) REFERENCES `sertifikat` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (\'sertifikat_bulanan\', \'4\', \'disetujui\', \'2025-05-24 21:05:36\', NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (\'sertifikat_bulanan\', \'4\', \'disetujui\', \'2025-05-24 21:05:36\', NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (:jenis_file:, :pemeriksa_id:, :status_pemeriksaan:, :tanggal_pemeriksaan:, :catatan_umum:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\MainController.php(875): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->saveMultiple()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 21:05:36 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`sisfo_pengajuan`.`pemeriksaan`, CONSTRAINT `fk_pemeriksaan_sertifikat` FOREIGN KEY (`sertifikat_id`) REFERENCES `sertifikat` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (\'sertifikat_bulanan\', \'4\', \'disetujui\', \'2025-05-24 21:05:36\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (\'sertifikat_bulanan\', \'4\', \'disetujui\', \'2025-05-24 21:05:36\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (\'sertifikat_bulanan\', \'4\', \'disetujui\', \'2025-05-24 21:05:36\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (:jenis_file:, :pemeriksa_id:, :status_pemeriksaan:, :tanggal_pemeriksaan:, :catatan_umum:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\MainController.php(875): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->saveMultiple()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-24 21:05:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-24 21:05:58 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`sisfo_pengajuan`.`pemeriksaan`, CONSTRAINT `fk_pemeriksaan_sertifikat` FOREIGN KEY (`sertifikat_id`) REFERENCES `sertifikat` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sisfo_pengajuan\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sisfo_pengajuan\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sisfo_pengajuan\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\sisfo_pengajuan\system\BaseModel.php(843): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\sisfo_pengajuan\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\sisfo_pengajuan\app\Controllers\MainController.php(875): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(933): App\Controllers\MainController->saveMultiple()
+#9 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+#10 C:\xampp\htdocs\sisfo_pengajuan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\sisfo_pengajuan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\sisfo_pengajuan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\sisfo_pengajuan\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-05-24 21:05:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`sisfo_pengajuan`.`pemeriksaan`, CONSTRAINT `fk_pemeriksaan_sertifikat` FOREIGN KEY (`sertifikat_id`) REFERENCES `sertifikat` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[Method: POST, Route: save-multiple]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (:jenis_file:, :pemeriksa_id:, :status_pemeriksaan:, :tanggal_pemeriksaan:, :catatan_umum:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\MainController.php(875): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->saveMultiple()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 21:05:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`sisfo_pengajuan`.`pemeriksaan`, CONSTRAINT `fk_pemeriksaan_sertifikat` FOREIGN KEY (`sertifikat_id`) REFERENCES `sertifikat` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (\'sertifikat_bulanan\', \'4\', \'disetujui\', \'2025-05-24 21:05:58\', NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (\'sertifikat_bulanan\', \'4\', \'disetujui\', \'2025-05-24 21:05:58\', NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (:jenis_file:, :pemeriksa_id:, :status_pemeriksaan:, :tanggal_pemeriksaan:, :catatan_umum:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\MainController.php(875): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->saveMultiple()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+CRITICAL - 2025-05-24 21:05:58 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`sisfo_pengajuan`.`pemeriksaan`, CONSTRAINT `fk_pemeriksaan_sertifikat` FOREIGN KEY (`sertifikat_id`) REFERENCES `sertifikat` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (\'sertifikat_bulanan\', \'4\', \'disetujui\', \'2025-05-24 21:05:58\', NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (\'sertifikat_bulanan\', \'4\', \'disetujui\', \'2025-05-24 21:05:58\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (\'sertifikat_bulanan\', \'4\', \'disetujui\', \'2025-05-24 21:05:58\', NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pemeriksaan` (`jenis_file`, `pemeriksa_id`, `status_pemeriksaan`, `tanggal_pemeriksaan`, `catatan_umum`) VALUES (:jenis_file:, :pemeriksa_id:, :status_pemeriksaan:, :tanggal_pemeriksaan:, :catatan_umum:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\MainController.php(875): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->saveMultiple()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-24 21:07:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 21:09:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 21:09:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 21:09:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-24 21:09:19 --> CodeIgniter\Database\Exceptions\DataException: Allowed fields must be specified for model: "App\Models\CatatanRevisi"
+[Method: POST, Route: save-multiple]
+in SYSTEMPATH\Model.php on line 822.
+ 1 SYSTEMPATH\Model.php(822): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\CatatanRevisi')
+ 2 SYSTEMPATH\BaseModel.php(824): CodeIgniter\Model->doProtectFieldsForInsert([...])
+ 3 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 4 APPPATH\Controllers\MainController.php(892): CodeIgniter\Model->insert([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MainController->saveMultiple()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\sisfo_pengajuan\\public\\index.php')
+DEBUG - 2025-05-24 21:10:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 21:10:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-24 21:10:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
