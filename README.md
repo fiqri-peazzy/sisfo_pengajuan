@@ -1,60 +1,79 @@
-# CodeIgniter 4 Framework
+# Sistem Informasi Pengajuan Pembayaran
 
-## What is CodeIgniter?
+## Apa itu Sistem Informasi Pengajuan Pembayaran?
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Sistem ini adalah aplikasi berbasis web untuk memudahkan pengajuan dan pengelolaan pembayaran secara elektronik, dibuat menggunakan framework CodeIgniter 4 yang ringan, cepat, dan aman.
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Tentang CodeIgniter 4
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+CodeIgniter 4 adalah framework PHP full-stack yang ringan, cepat, fleksibel, dan aman. Informasi lebih lengkap bisa dilihat di [situs resmi CodeIgniter](https://codeigniter.com).
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+Framework ini menggunakan struktur modern dengan folder _public_ sebagai root web server untuk keamanan yang lebih baik.
 
-## Important Change with index.php
+## Persyaratan Sistem
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+Agar dapat menjalankan aplikasi ini, pastikan server Anda memenuhi persyaratan berikut:
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+- PHP versi 8.1 atau lebih tinggi
+- Ekstensi PHP berikut sudah aktif:
+  - intl
+  - mbstring
+  - json (aktif secara default)
+  - mysqlnd (jika menggunakan MySQL)
+  - curl (jika menggunakan library HTTP\CURLRequest)
 
-**Please** read the user guide for a better explanation of how CI4 works!
+> **Catatan:**  
+> PHP versi 7.4 dan 8.0 sudah tidak didukung dan sangat disarankan untuk segera melakukan upgrade ke versi 8.1 atau lebih tinggi.
 
-## Repository Management
+## Cara Instalasi
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+Ikuti langkah-langkah berikut untuk menginstal sistem ini di server Anda:
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+1. **Unduh atau clone repository ini ke server Anda.**
 
-## Contributing
+2. **Konfigurasi Web Server:**  
+   Atur root directory web server Anda untuk mengarah ke folder `public` di dalam project ini.  
+   Contoh konfigurasi virtual host pada Apache atau Nginx bisa ditemukan di dokumentasi CodeIgniter 4.
 
-We welcome contributions from the community.
+3. **Instalasi dependencies menggunakan Composer:**  
+   Jalankan perintah berikut di direktori project (jika menggunakan Composer):
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+   ```bash
+   composer install
+   ```
 
-## Server Requirements
+4. **Konfigurasi Database:**  
+   Salin file `.env.example` menjadi `.env` dan sesuaikan konfigurasi database sesuai dengan lingkungan Anda:
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+   ```
+   database.default.hostname = localhost
+   database.default.database = nama_database
+   database.default.username = user_database
+   database.default.password = password_database
+   ```
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+5. **Migrasi Database:**  
+   Setelah konfigurasi database selesai, jalankan migrasi database:
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+   ```bash
+   php spark migrate
+   ```
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+6. **Jalankan aplikasi:**  
+   Anda bisa menggunakan built-in server CodeIgniter untuk pengujian lokal:
+   ```bash
+   php spark serve
+   ```
+   Lalu buka browser dan akses `http://localhost:8080`.
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+## Struktur Folder Penting
+
+- `app/` — Tempat file aplikasi utama (controller, model, view, dll)
+- `public/` — Folder root webserver, berisi file index.php dan aset publik
+- `writable/` — Folder tempat menyimpan file yang dapat ditulis oleh sistem (cache, logs, dll)
+
+## Support dan Kontribusi
+
+Jika ada pertanyaan atau masalah, silakan bergabung di forum resmi CodeIgniter Indonesia atau gunakan issue tracker di repository pengembangan CodeIgniter 4.
+
+Kami juga terbuka untuk kontribusi dari komunitas. Silakan baca panduan kontribusi di repository utama CodeIgniter 4.
